@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int gcdr(int a, int b) 
+{
+  if(a==0)
+    return b;
+  if(b==0)
+    return a;
+  return gcdr(b, a%b);
+}
+
+int countCoprimes(int N) 
+{
+  int coprimes = 0;
+
+  for (int i = 1; i <= N; ++i) 
+    if (gcdr(N, i) == 1)
+      coprimes++;
+  
+  return coprimes;
+}
+
+int main() 
+{
+  int N;
+  cin >> N;
+
+  cout << countCoprimes(N) << endl;
+
+  return 0;
+}

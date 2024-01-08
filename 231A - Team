@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() 
+{
+  int n, count=0;
+  cin >> n;
+ 
+  while(n--)
+  {
+    int a, b, c, d=2;
+    cin >> a >> b >> c;
+    if(a + b == d || a + c == d || b + c == d)
+      count++;
+  }
+  cout<<count<<endl;
+ 
+  return 0;
+}
